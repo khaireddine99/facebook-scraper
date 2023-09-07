@@ -22,9 +22,9 @@ password = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.CSS_SE
 
 #enter username and password
 username.clear()
-username.send_keys("khairisama1999@gmail.com")
+username.send_keys("youreamil")
 password.clear()
-password.send_keys("Deathnote12")
+password.send_keys("yourpassword")
 
 #target the login button and click it
 button = WebDriverWait(driver, 2).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "button[type='submit']"))).click()

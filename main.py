@@ -15,6 +15,7 @@ prefs = {"profile.default_content_setting_values.notifications" : 2}
 chr_options.add_experimental_option("prefs",prefs)
 driver = webdriver.Chrome(options=chr_options)
 driver.get("https://www.facebook.com/")
+print(driver.title)
 
 #target username
 username = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "input[name='email']")))
@@ -22,29 +23,31 @@ password = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.CSS_SE
 
 #enter username and password
 username.clear()
-username.send_keys("youreamil")
+username.send_keys("khairisama1999@gmail.com")
 password.clear()
-password.send_keys("yourpassword")
+password.send_keys("Deathnote12")
 
 #target the login button and click it
 button = WebDriverWait(driver, 2).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "button[type='submit']"))).click()
 
 #We are logged in!
 
-# scroll down and wait 
-driver.execute_script("window.scrollTo(0,document.body.scrollHeight)")
 time.sleep(3)
 
+# get to the post
+driver.get("https://www.facebook.com/photo/?fbid=315635924372096&set=gm.2118155795021720&idorvanity=1519983794838926")
+time.sleep(2)
 
-# target comment area and comment
+
+# leave a comment under the post
 comment_area = driver.find_element(By.XPATH, "//p[@class='xdj266r x11i5rnm xat24cr x1mh8g0r']")
 comment_area.send_keys("comment made by a bot")
 comment_area.send_keys(Keys.ENTER)
 
-# changes 
-print("hello github")
 
-print("third commit")
+
+
+
 
 
 
